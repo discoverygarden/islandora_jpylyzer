@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Install hooks.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function islandora_jpylyzer_requirements() {
+  $t = get_t();
+  $path = exec("which jpylyzer");
+  $jpylyzer_exists = is_executable($path);
+  return array(
+    array(
+      'title' => $t("Islandora Jpylyzer Executable"),
+      'description' => $jpylyzer_exists ? NULL : $t('Unable to execute the jpylyzer binary as the webserver. Jpylyzer must be installed before enabling this module.'),
+      'value' => $jpylyzer_exists ? $t('Executable found at @path', array('@path' => $path)) : $t('Unable to find/run the Jpylyzer executable'),
+      'severity' => $jpylyzer_exists ? REQUIREMENT_OK : REQUIREMENT_ERROR,
+    ),
+  );
+}

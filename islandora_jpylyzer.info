@@ -1,0 +1,6 @@
+name = "Islandora Jpylyzer"
+description = "Provides a Drush script to validate repository JP2s."
+dependencies[] = islandora
+package = "Islandora Tools"
+version = 7.x-dev
+core = 7.x
