@@ -22,7 +22,7 @@ sudo dpkg -i installer.deb
 
 ## Configuration
 
-Drush options can be used to narrow the JP2 set to verify. Use `drush help jp2-verify` for more information.
+Drush options can be used to narrow the JP2 set to verify. Use `drush help verify-jp2s` for more information.
 
 ## Troubleshooting/Issues
 
